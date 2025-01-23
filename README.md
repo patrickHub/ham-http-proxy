@@ -52,13 +52,10 @@ Automated builds of the image are available on [Dockerhub](https://hub.docker.co
 > **Note**: Builds are also available on [Quay.io](https://quay.io/repository/sameersbn/squid)
 
 ```bash
-docker pull sameersbn/squid:3.5.27-2
-```
+docker build -t squid-proxy .
+docker run --name squid -d --restart=always -p 3128:3128 squid-proxy
+docker start squid
 
-Alternatively you can build the image yourself.
-
-```bash
-docker build -t sameersbn/squid github.com/sameersbn/docker-squid
 ```
 
 ## Quickstart
